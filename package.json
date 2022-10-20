@@ -1,0 +1,23 @@
+{
+  "name": "travel-log",
+  "version": "1.0.0",
+  "description": "[Github](https://github.com/shondriane) [LinkedIn](https://www.linkedin.com/in/shondriane-mesa-wise/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shondriane/Travel-Log.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shondriane/Travel-Log/issues"
+  },
+  "homepage": "https://github.com/shondriane/Travel-Log#readme",
+  "dependencies": {
+    "mongoose": "^6.6.5"
+  }
+}
