@@ -1,2 +1,1 @@
-npm install express cors morgan
-npm install nodemon --save-dev
+/node_modules
