@@ -37,6 +37,57 @@ const main = async () => {
         { name: 'Seven Hanging Valleys Trial', activity: 'hike', description: 'Levada trail leads to 25 fountains that form a pool, perfect for cooling down after a nice hike', image:'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0e/7e/79/d0.jpg', destination:destination3._id},
         {name: 'Bengali Beach', activity: 'beach', description: 'Picturesque beaches. With the option to hike the 12km Seven Hanging Valley Trail to explore additional sea caves', image: 'https://cdn.algarvefun.com/wp-content/uploads/2017/06/10194639/classic-benagil-large-1.jpg',destination: destination3.id},
         {name: 'Tasco', activity: 'food', description: '#1 Restaurant in Porto, it\'s not just food, it\'s an experience', image: 'https://www.instagram.com/p/Cj0ug6Ms547/', destination: destination3.id}, 
+        {name: 'Chapel Bar/ Fotografiska', activity: 'art', description: 'excuslive membership bar', image: 'https://www.fotografiska.com/app/uploads/sites/3/2021/08/20210903-Chapel_Bar_0045.jpg ',destination:destination2._id},
+        { name: 'Zion National Park', activity: 'hike',description: 'heaven on earth',image: 'https://i.natgeofe.com/n/58501719-c60c-46a4-b829-55108239deb7/virgin-river-narrows-zion-national-park_4x3.jpg ',destination:destination2._id},
+                                              { 
+        name: 'National Museum of African American History and Culture', 
+        activity: 'museum', 
+        description: 'A people\'s journey,a nation story',
+        image: ' https://nmaahc.si.edu/sites/default/files/styles/scale_crop_1920_1200/public/by_hero_001.png?h=48212d01&itok=8u1e-TKj',
+        destination:destination2._id
+      },
+      { 
+        name: 'Oceanario de Lisboa', 
+        activity: 'aquarium', 
+        description: 'Centerpiece of the last world fair',
+        image: ' https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/45/e0/b7/oceano-global-global.jpg?w=1200&h=-1&s=1',
+        destination: destination3.id
+      },
+                               { 
+        name: 'Mesa de Frades', 
+        activity: 'music', 
+        description: 'built in a formal chapel, intimate and great ambience.',
+        image: 'https://media.cntraveler.com/photos/5be0644990e25c2d60bee048/1:1/w_1600%2Cc_limit/PedroGuimaraes_1210740.jpg ',
+        destination: destination3.id
+      },
+                                              { 
+        name: 'Pena National Palace', 
+        activity: 'museum', 
+        description: 'Most visited monument and one of the seven wonders of portugal',
+        image: 'https://www.historyhit.com/app/uploads/fly-images/5156928/Pena-National-Palace-788x537.jpg ',
+        destination:destination3._id
+      },
+                               { 
+        name: 'La Digue Island', 
+        activity: 'beach', 
+        description: 'granite boulders along the beautiful beaches',
+        image: ' https://assets.traveltriangle.com/blog/wp-content/uploads/2016/07/Granite-rocks-at-beautiful-beach-on-tropical-island-La-Digue-in-Seychelles.jpg',
+        destination: destination4.id
+      },
+                               { 
+        name: 'Curieuse Island', 
+        activity: 'beach', 
+        description: 'See huge tortoises and breathtaking beaches',
+        image: 'https://cdn2.civitatis.com/seychelles/praslin/galeria/tortuga-gigante-isla-curieuse.jpg ',
+        destination: destination4.id
+      },
+                                              { 
+        name: 'Rock Climbing at La Digue Island', 
+        activity: 'Rock Climbing', 
+        description: 'Rock Climb and take a swim',
+        image: 'https://27crags.s3.amazonaws.com/photos/000/098/98425/size_xl-39caa084c804.jpg ',
+        destination:destination4._id
+      }
     ]
 
     await ActivityDetail.insertMany(activitiesDetails)
