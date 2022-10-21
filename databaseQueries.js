@@ -7,7 +7,7 @@ const Destination = require('./models/destination')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main =async()=>{
-await activityDetails.delete
+// await activityDetails.findOne({_id:id}).populate()
 }
 
 main()

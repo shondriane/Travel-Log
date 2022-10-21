@@ -3,8 +3,10 @@ const logger = require('morgan')
 const PORT = process.env.PORT || 3001
 const db = require('./db')
 const routes=require('./routes')
+const cors= require('cors')
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(logger('dev'))
 
