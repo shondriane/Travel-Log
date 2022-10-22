@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import {useParams, useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
+import ActivityCard from '../components/ActivityCard'
+import ActivityDetails from './ActivityDetails'
+
 
 
 
@@ -12,7 +15,7 @@ const Destination = (props) => {
 
   const getDestination = async () => {
     const response = await axios.get(
-        'http://localhost:3001/api/destination'
+      `http://localhost:3001/api/activityDetails/${destinationId}`
     )
    console.log(response)
     setDestination(response.data.destination)
@@ -27,21 +30,17 @@ const Destination = (props) => {
     <div className="destination-content">
       <h1>{selectedDestination}</h1>
       <Link onClick ={()=> navigate(-1)}>Go back to destination list</Link>
-      <section className="image-container">
-        <div>
-        <img src ={destination.image}/>
-
-        </div>
-      </section>
-      <section className="details">
-        <div className="flex-row space">
-          <h1>Name: {destination.name}</h1>
-        
-        </div>
-        <div>
-         
-        </div>
-      </section>
+      {ActivityDetails.map((activity) => (
+        <Link to ={`/activityDetails/${destination}`}>
+        <ActivityCard
+          key={activity.id}
+          name={activity.name}
+          image={activity.image}
+          
+          
+        />
+        </Link>
+      ))}
     </div>
   ):null
 }
