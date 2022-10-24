@@ -3,11 +3,15 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 
 
+
 const ActivityDetails = (props) => {
   const navigate = useNavigate()
   let { activityId } = useParams()
   const [selectedActivity, setSelectedActivity] = useState(null)
   const [activityDetails, setActivityDetails] = useState(null)
+  
+ 
+
 
   const getActivityDetails = async () => {
     const response = await axios.get(
@@ -20,6 +24,11 @@ const ActivityDetails = (props) => {
   useEffect(() => {
     getActivityDetails()
   }, [activityId])
+
+
+const removeActivity=async()=>{
+  const remove = await axios.delete(`http://localhost:3001/api/activityDetails/${activityId}`)
+}
 
   return selectedActivity !== null ? (
     <div className="activity-content">
@@ -35,6 +44,7 @@ const ActivityDetails = (props) => {
           <h1>Place: {activityDetails.name}</h1>
           <h2>Activity: {activityDetails.activity}</h2>
           <p>{activityDetails.description}</p>
+          <button onClick={removeActivity} >Remove</button>
         </div>
       </section>
     </div>

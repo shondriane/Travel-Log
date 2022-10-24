@@ -40,6 +40,7 @@ const AddActivity =()=>{
     const handleChange=event=>{
         setFormState({...formState,[event.target.id]:event.target.value})
     }
+    
    
     return(
         <div className="formDiv">

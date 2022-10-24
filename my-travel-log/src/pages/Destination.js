@@ -27,6 +27,8 @@ const Destination = (props) => {
 
   }, [destinationId])
 
+ 
+ 
   return destinationsId!==null ?(
     <div className="container-grid">
      
@@ -40,8 +42,10 @@ const Destination = (props) => {
           
           
         />
+      
         </Link>
       ))}
+     
     </div>
   ):null
 }
