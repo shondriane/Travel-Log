@@ -10,7 +10,8 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
   const [activityDetails, setActivityDetails] = useState([])
-
+ 
+ 
 
   const getActivityDetails = async () => {
     const response = await axios.get(

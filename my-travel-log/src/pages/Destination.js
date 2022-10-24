@@ -10,30 +10,31 @@ import ActivityDetails from './ActivityDetails'
 const Destination = (props) => {
   const navigate= useNavigate()
   let{destinationId} = useParams()
-  const [selectedDestination, setSelectedDestination] = useState(null)
+  const [destinationsId, setDestinationId] = useState(null)
   const [destination, setDestination] = useState(null)
 
-  const getDestination = async () => {
+  const getDestinationById
+   = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/activityDetails/${destinationId}`
+      `http://localhost:3001/api/activityDetails/destination/${destinationId}`
     )
    console.log(response)
-    setDestination(response.data.destination)
-  setSelectedDestination(response.data.destination.name)
+    setDestination(response.data.activityDetails)
+  setDestinationId(destinationId)
   }
   useEffect(() => {
-   getDestination()
+   getDestinationById()
 
   }, [destinationId])
 
-  return selectedDestination!==null ?(
-    <div className="destination-content">
-      <h1>{selectedDestination}</h1>
+  return destinationsId!==null ?(
+    <div className="container-grid">
+     
       <Link onClick ={()=> navigate(-1)}>Go back to destination list</Link>
-      {ActivityDetails.map((activity) => (
-        <Link to ={`/activityDetails/${destination}`}>
+      {destination.map((activity) => (
+        <Link to ={`/activityDetails/${activity._id}`}>
         <ActivityCard
-          key={activity.id}
+          key={activity._id}
           name={activity.name}
           image={activity.image}
           
