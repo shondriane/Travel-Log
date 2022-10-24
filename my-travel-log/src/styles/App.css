@@ -153,4 +153,8 @@ button {
   justify-content: space-between;
 }
 
+div.formDiv{
+  display:table-row
+}
+
 
