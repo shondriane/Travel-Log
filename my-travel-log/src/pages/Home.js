@@ -10,7 +10,9 @@ import {Link} from 'react-router-dom'
 
 const Home = () => {
   const [activityDetails, setActivityDetails] = useState([])
- 
+  const [searchResults, setSearchResults] = useState([])
+  const [searched, toggleSearched] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
  
 
   const getActivityDetails = async () => {
@@ -38,29 +40,42 @@ const Home = () => {
     getDestination()
   }, [])
 
- 
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value)
+  }
+
+  const getSearchResults = async (e) => {
+    e.preventDefault()
+    const response = await axios.get(
+      `http://localhost:3001/api/activitydetails/activity/${searchQuery}`
+    )
+    setSearchResults(response.data.activityDetails)
+   toggleSearched(true)
+   setSearchQuery(' ')
+    }
   
   
 
   return (
     <div>
-   
-      <div className="activities">
-        <h2>Activities</h2>
-       
-        <section className="container-grid">
-        {activityDetails.map((activity)=>(
-          <Link to ={`/activityDetails/${activity._id}`}>
+      <div className="search">
+        <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
+     
+      {searched && (<div><h2>Search Results</h2>
+        <section className="search-results container-grid">
+        {searchResults.map((searchResult)=>(
+          <Link to ={`/activityDetails/${searchResult._id}`}>
           <ActivityCard
-          image= {activity.image}
-          name ={activity.name}
-          key ={activity._id}/>
+          image= {searchResult.image}
+          name ={searchResult.name}
+          key ={searchResult._id}/>
         
           </Link>
           
 ))}
 </section></div>
-      
+   )}
+   </div>   
 
 <div className="destination">
 <h2>Destination</h2>
