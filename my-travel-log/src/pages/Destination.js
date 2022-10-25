@@ -27,25 +27,30 @@ const Destination = (props) => {
 
   }, [destinationId])
 
- 
- 
+  const removeActivity=async()=>{
+  
+    const remove = await axios.delete(`http://localhost:3001/api/destination/${destinationId}`)
+    navigate(-1)
+  
+}
   return destinationsId!==null ?(
     <div className="container-grid">
-     
+    
       <Link onClick ={()=> navigate(-1)}>Go back to destination list</Link>
+      <Link onClick = {removeActivity}>Remove Destination</Link>
       {destination.map((activity) => (
         <Link to ={`/activityDetails/${activity._id}`}>
         <ActivityCard
           key={activity._id}
           name={activity.name}
           image={activity.image}
-          
-          
+       
         />
-      
+          {/* <button onClick={removeActivity}> Remove</button> */}
         </Link>
+        
       ))}
-     
+    
     </div>
   ):null
 }

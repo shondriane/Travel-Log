@@ -54,7 +54,7 @@ const Home = () => {
    setSearchQuery(' ')
     }
   
-  
+    
 
   return (
     <div>
@@ -86,7 +86,9 @@ const Home = () => {
           image= {country.image}
           name ={country.country}
           key ={country._id}/>
+         
           </Link>
+           
 ))}  
      </section>
      </div>

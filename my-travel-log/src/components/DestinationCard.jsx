@@ -1,4 +1,8 @@
-const DestinationCard = ({ image, name, onClick }) => {
+
+const DestinationCard = ({ image, name, onClick,removeActivity }) => {
+ 
+    
+ 
   return (
     <div className="card" onClick={onClick}>
       <div className="img-wrapper">
@@ -7,6 +11,7 @@ const DestinationCard = ({ image, name, onClick }) => {
       <div className="info-wrapper flex-col">
         <h3>{name}</h3>
       </div>
+      
     </div>
   )
 }

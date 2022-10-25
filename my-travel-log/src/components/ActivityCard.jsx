@@ -1,4 +1,5 @@
 const ActivityCard = ({ image, name, onClick }) => {
+  
   return (
     <div className="card" onClick={onClick}>
       <div className="img-wrapper">
