@@ -40,7 +40,7 @@ const AddActivity =()=>{
     const handleChange=event=>{
         setFormState({...formState,[event.target.id]:event.target.value})
     }
-    
+
    
     return(
         <div className="formDiv">
@@ -50,6 +50,7 @@ const AddActivity =()=>{
     <input type="text" id="name" onChange={handleChange}value={formState.name}/>
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
+    <option defaultValue ="select option">Select Activity</option>
       <option value="Nature&Wildlife">Nature and Wildlife</option>
       <option value="Museum">Museum</option>
       <option value="Food">Food</option>
@@ -68,6 +69,7 @@ const AddActivity =()=>{
     <label htmlFor="image">Image Address Link</label>
     <textarea id="image" onChange={handleChange} value={formState.image}></textarea>
     <select id="destination" onChange={handleChange} value={formState.destination}>
+    <option defaultValue ="select country">Select Country</option>
     {destinations.map((country)=>(
           <option value= {country._id}>{country.country}</option>
          

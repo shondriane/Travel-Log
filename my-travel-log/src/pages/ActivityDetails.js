@@ -25,11 +25,14 @@ const ActivityDetails = (props) => {
     getActivityDetails()
   }, [activityId])
 
+  
 
 const removeActivity=async()=>{
   const remove = await axios.delete(`http://localhost:3001/api/activityDetails/${activityId}`)
   navigate(-2)
 }
+
+
 
 
   return selectedActivity !== null ? (
@@ -47,7 +50,9 @@ const removeActivity=async()=>{
           <h2>Activity: {activityDetails.activity}</h2>
           <p>{activityDetails.description}</p>
           <button onClick={removeActivity} >Remove</button>
-       
+          <Link to={`/updateActivity/${activityId}`}>
+          <button>Edit</button>
+       </Link>
         </div>
       </section>
     </div>

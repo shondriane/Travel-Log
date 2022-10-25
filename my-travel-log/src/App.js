@@ -9,7 +9,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import ActivityDetails from './pages/ActivityDetails'
 import Destination from './pages/Destination'
-
+import UpdateActivity from './pages/UpdateActivity'
 
 const App = () => {
 
@@ -21,8 +21,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
-      {/* <Route path ="/updateActivity" element={<UpdateActivity/>}/>
-      <Route path ="/updateDestination" element={<UpdateDestination/>}/> */}
+       <Route path ="/updateActivity/:activityId" element={<UpdateActivity/>}/>
+      {/* <Route path ="/updateDestination" element={<UpdateDestination/>}/>  */}
         <Route path ="/addActivity" element={<AddActivity/>}/>
         <Route path = "/addDestination" element={<AddDestination/>}/>
          <Route path="/activitydetails/:activityId" element={<ActivityDetails />} />
