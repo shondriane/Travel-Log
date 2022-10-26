@@ -7,7 +7,7 @@ import Tasks from '../components/Tasks'
 import axios from 'axios'
 import '../styles/form.css'
 
-const UpdateActivity =(prop)=>{
+const CopyActivity =(prop)=>{
     const navigate = useNavigate()
     let { activityId } = useParams()
     const [data,setData]=useState([])
@@ -52,7 +52,7 @@ const UpdateActivity =(prop)=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.put(`http://localhost:3001/api/activityDetails/${activityId}`,formState)
+    axios.post('http://localhost:3001/api/activityDetails',formState)
     setFormState(initialState)
     navigate('/')
  
@@ -68,7 +68,6 @@ const UpdateActivity =(prop)=>{
       setTasks(list)
       setFormState({...formState,todo:list})
       setValue(" ")
-     
     }
   
     const handleChangeInput =(e)=>{
@@ -116,7 +115,7 @@ const UpdateActivity =(prop)=>{
     <label htmlFor="description">Description</label>
     <textarea id="description" cols="30" rows="10" value ={formState.description} onChange={handleChange} ></textarea>
     <Input handleChange={handleChangeInput} addTask={addTask} inputValue={inputValue} onChange={handleChange} value={formState.todo}/>
-    <Tasks tasks={tasks} removeTask={removeTask}value={formState.todo}/>
+    <Tasks tasks={tasks} removeTask={removeTask}/>
     <ul>
      
     </ul>
@@ -131,7 +130,7 @@ const UpdateActivity =(prop)=>{
 ))} 
 </select>
 
-    <button className="send"  type="submit" onClick={handleSubmit}>Send</button>
+    <button   type="submit" onClick={handleSubmit}>Send</button>
  </div> 
 </div>
 </div>
@@ -139,4 +138,4 @@ const UpdateActivity =(prop)=>{
     )
 }
 
-export default UpdateActivity
+export default CopyActivity

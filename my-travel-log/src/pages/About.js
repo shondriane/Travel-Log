@@ -14,13 +14,13 @@ const About = () => {
    <h1> Unsolicited Advice </h1> 
 <p>
 
-    Someone once told me to travel the world, while you can. Don't wait because tomorrow is never promised, and circmstances may change. 
+    Someone once told me to travel the world while you can. Don't wait because tomorrow is never promised, and circmstances may change. 
     <br></br>
     This made me think of my grandfather, who moved to his favorite city once he retired.
     Shortly thereafter, he got real sick and never had a chance to enjoy it. <br></br>
-    So I pass on what was told to me, go out there and see the world.
+    So I pass on what was told to me. Go out there and see the world!
     Explore your own neighborhood, your own state, your own country, and different regions in the world. <br></br>
-    You'll be suprised at what you will find and learn.
+    You'll be suprised at what and who you'll find along the way.
 
   </p>
   

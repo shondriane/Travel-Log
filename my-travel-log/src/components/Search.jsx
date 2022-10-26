@@ -11,7 +11,7 @@ const Search = (props) => {
   onChange={props.handleChange}
 ></input>
 
-<button type="submit" onClick={props.toggleSearch}>Submit</button>
+<button id="search" type="submit" onClick={props.toggleSearch}>Submit</button>
 
     </form>
    
@@ -20,3 +20,4 @@ const Search = (props) => {
 }
 
 export default Search
+

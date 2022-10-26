@@ -53,9 +53,17 @@ const removeActivity=async()=>{
       <h2>Activity: {activityDetails.activity}</h2>
         
           <p>{activityDetails.description}</p>
+         
+          <ul>
+            <li>{activityDetails.todo}</li>
+          </ul>
+
           <button className="remove"onClick={removeActivity} >Remove</button>
           <Link to={`/updateActivity/${activityId}`}>
           <button className="edit">Edit</button>
+       </Link>
+       <Link to={`/copyActivity/${activityId}`}>
+          <button className="copy">Copy</button>
        </Link>
       
       </section>

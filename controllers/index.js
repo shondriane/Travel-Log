@@ -1,3 +1,4 @@
+const activityDetails = require('../models/activityDetails');
 const ActivityDetails = require('../models/activityDetails');
 
 const createActivityDetails = async (req, res) => {
@@ -19,6 +20,36 @@ const getAllActivityDetails = async (req, res) => {
         return res.status(500).send(error.message);
     }
 }
+const getAllActivityDetailsByDestination = async (req, res) => {
+    try {
+        const{id}=req.params;
+        const activityDetails = await ActivityDetails.find({destination:id})
+        return res.status(200).json({ activityDetails })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const getAllActivityDetailsByActivity = async (req, res) => {
+    try {
+        const{activity}=req.params;
+        const activityDetails = await ActivityDetails.find({activity:activity})
+        return res.status(200).json({ activityDetails })
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+
+
+const getActivityDetails = async(req,res)=>{
+    try{
+        const activityDetails = await ActivityDetails.elemMatch()
+        return res.status(200).json({activityDetails})   
+    }catch (error){
+        return res.status(500).send(error.message);
+    }
+}
 
 const getActivityDetailsById = async (req, res) => {
     try {
@@ -36,7 +67,7 @@ const getActivityDetailsById = async (req, res) => {
 const updateActivityDetails = async (req, res) => {
     try {
         const activityDetails = await ActivityDetails.findByIdAndUpdate(req.params.id, req.body, { new: true})
-        res.status(200).json(plant)
+        res.status(200).json(activityDetails)
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -114,6 +145,7 @@ const deleteDestination = async (req, res) => {
 module.exports = {
     createActivityDetails,
     getAllActivityDetails,
+    getActivityDetails,
     getActivityDetailsById,
     updateActivityDetails,
     deleteActivityDetails,
@@ -122,4 +154,6 @@ module.exports = {
     getDestinationById,
     updateDestination,
     deleteDestination,
+    getAllActivityDetailsByDestination,
+    getAllActivityDetailsByActivity
 }

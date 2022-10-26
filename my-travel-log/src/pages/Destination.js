@@ -37,10 +37,13 @@ const Destination = (props) => {
 }
   return destinationsId!==null ?(
     <div className="container-grid">
-    
+    <div className="sidenav">
+   
       <Link onClick ={()=> navigate(-1)}>Go back to destination list</Link>
       <Link onClick = {removeActivity}>Remove Destination</Link>
       <Link to={`/updateDestination/${destinationId}`}>Update Destination</Link>
+      </div>
+      
       {destination.map((activity) => (
         <Link to ={`/activityDetails/${activity._id}`}>
         <ActivityCard

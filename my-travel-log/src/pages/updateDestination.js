@@ -51,7 +51,7 @@ const UpdateDestination =(prop)=>{
     <label htmlFor="image">Image Address Link</label>
     <textarea id="image"  onChange={handleChange} value={formState.image}></textarea>
 
-    <button type="submit">Send</button>
+    <button type="submit" className="send">Send</button>
    </div>
 </form>
 </div>

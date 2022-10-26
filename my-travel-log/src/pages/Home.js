@@ -41,44 +41,39 @@ const Home = () => {
   }, [])
 
   const handleChange = (event) => {
-    setSearchQuery(event.target.value)
+    let word= event.target.value
+    let firstUpper = word.substr(0,1).toUpperCase()+ word.substr(1)
+    setSearchQuery(firstUpper)
   }
+  
 
   const getSearchResults = async (e) => {
     e.preventDefault()
     const response = await axios.get(
       `http://localhost:3001/api/activitydetails/activity/${searchQuery}`
     )
-
       setSearchResults(response.data.activityDetails)
-    
-    
-   toggleSearched(true)
-   setSearchQuery(' ')
+      toggleSearched(true)
+      
     }
-  
-    
+   
 
   return (
     <div>
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
-     
-      {searched && (<div><h2>Search Results</h2>
+        {searched && (<div><h2>Search Results</h2>
         <section className="search-results container-grid">
         {searchResults.map((searchResult)=>(
-          <Link to ={`/activityDetails/${searchResult._id}`}>
+          <Link to ={`/activityDetails/${searchResult._id}`} key ={searchResult._id}>
           <ActivityCard
           image= {searchResult.image}
           name ={searchResult.name}
-          key ={searchResult._id}/>
-        
-          </Link>
-          
+         />
+          </Link>      
 ))}
 </section></div>
-   )
-  }
+   )}
    </div>   
 
 <div className="allActivities">
@@ -91,14 +86,12 @@ const Home = () => {
 <h1>Destination</h1>
     <section className="container-grid">
  {destination.map((country)=>(
-          <Link to ={`/destination/${country._id}`}>
+          <Link to ={`/destination/${country._id}`} key ={country._id}>
           <DestinationCard
           image= {country.image}
           name ={country.country}
-          key ={country._id}/>
-         
-          </Link>
-           
+          />     
+          </Link>       
 ))}  
      </section>
      </div>

@@ -12,6 +12,7 @@ import ActivityDetails from './pages/ActivityDetails'
 import Destination from './pages/Destination'
 import UpdateActivity from './pages/UpdateActivity'
 import UpdateDestination from './pages/UpdateDestination'
+import CopyActivity from './pages/CopyActivity'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/allActivities" element={<AllActivities/>}/>
        <Route path ="/updateActivity/:activityId" element={<UpdateActivity/>}/>
+       <Route path ="/copyActivity/:activityId" element={<CopyActivity/>}/>
        <Route path ="/updateDestination/:destinationId" element={<UpdateDestination/>}/>  
         <Route path ="/addActivity" element={<AddActivity/>}/>
         <Route path = "/addDestination" element={<AddDestination/>}/>
