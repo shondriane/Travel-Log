@@ -25,14 +25,17 @@ const AddDestination =()=>{
    
     return(
         <div className="formDiv">
+            
             <form className="classes.form" onSubmit={handleSubmit}>
+                <div className ="form">
 <h1>Creating new Destination</h1>
 <label htmlFor="country">Country:</label>
-    <input type="text" id="country" onChange={handleChange}value={formState.country}/>
+    <textarea type="text" id="country" onChange={handleChange}value={formState.country}/>
     <label htmlFor="image">Image Address Link</label>
     <textarea id="image" onChange={handleChange} value={formState.image}></textarea>
    
     <button type="submit">Send</button>
+    </div>
             </form>
 
         </div>

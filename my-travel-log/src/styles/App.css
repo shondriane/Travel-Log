@@ -62,6 +62,7 @@ input:focus::placeholder {
 
 main {
   padding: 2em 0;
+  
 }
 
 form {
@@ -123,27 +124,58 @@ button {
   text-align: center;
 } */
 
-.activity-content .image-container {
-  width: 95vw;
+.activity-content  {
+  /* width: 95vw;
   margin: auto;
+  display:grid;
+  grid-template-columns: 100px auto 100;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1em 0;
+  padding: 1em 0; */
+  margin :0 auto;
+  max-width:1000px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap: 20px;
 }
+
+
+.title {
+display: text-align;
+}
+
 
 .image-container div {
   margin: auto;
-  width: 90%;
+  width: 100%;
+grid-column-start: 1;
+grid-column-end: 3;
+  display:flex;
+
 }
 
 .image-container img {
   margin: auto;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 .details {
   width: 80%;
   margin: auto;
+  padding:40px;
+}
+
+button.remove{
+margin-top: 2em;
+margin-right: 2em;
+color:red
+}
+button.edit{
+  
+  color:rgb(3, 49, 3)
+  }
+p{
+  margin-top: 1em
 }
 
 .flex-row {
@@ -153,8 +185,48 @@ button {
   justify-content: space-between;
 }
 
-div.formDiv{
-  display:table-row
+
+
+.formDiv{
+  font-size:30px;
+  text-align:center;
+  color:pink;
+  margin: 0 0 .5vh 0;
+  min-width: 100%;
+height: 100vh;
+padding:5vh;
+position:relative;
+
+  
 }
 
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  ;
+}
+
+.formDiv h1{
+  font-size: 35px;
+  text-align:center;
+  color:rgb(206, 15, 145);
+  margin: 0 0 .5vh 0;
+
+}
+.formDiv input,textarea,select{
+  display:block;
+  width:100%;
+  padding: .5rem .8rem .5rem ,8rem;
+  margin: .9vh 0;
+  border:0;
+  border: radius 5px;
+  font-size:20px;;
+}
+.allActivities{
+  margin-bottom: 5em;
+}
+.formDiv textarea{
+  height: 10vh;
+}
 

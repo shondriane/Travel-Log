@@ -15,7 +15,7 @@ const UpdateActivity =(prop)=>{
           `http://localhost:3001/api/activityDetails/${activityId}`
         )
         console.log(response)
-        setData(response.data.activityDetails)
+        setFormState(response.data.activityDetails)
        
       }
       useEffect(() => {
@@ -23,13 +23,13 @@ const UpdateActivity =(prop)=>{
       }, [activityId])
 
       const initialState={
-        name: `${data.name}`,
-        activity: `${data.activity}`,
-        description:`${data.description}`,
-        image:`${data.image}`,
-        destination:`${data.destination}`,
-        image:`${data.image}`,
-        description:`${data.description}`
+        name: "",
+        activity: "",
+        description: "",
+        image:"",
+        destination: "",
+        image:"",
+        description: ""
     
     }
     const [formState, setFormState]= useState(initialState);
@@ -51,6 +51,7 @@ const UpdateActivity =(prop)=>{
     event.preventDefault();
     axios.put(`http://localhost:3001/api/activityDetails/${activityId}`,formState)
     setFormState(initialState)
+    navigate('/')
  
     }
 
@@ -58,14 +59,16 @@ const UpdateActivity =(prop)=>{
         setFormState({...formState,[event.target.id]:event.target.value})
     }
     return (
-<div>
+<div className="formDiv">
+<form className="classes.form" onSubmit={handleSubmit}>
+  <div className="form">
 <h1>Update Activity</h1>
-<form orm className="classes.form" onSubmit={handleSubmit}>
+
 <label htmlFor="name">Name:</label>
-<input type = "text" defaultValue ={data.name}/>
+<textarea type = "text" value={formState.name} onChange={handleChange} id="name"/>
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
-        <option defaultValue ={data.name}>{data.activity}</option>
+        <option value={formState.activity}>{formState.activity}</option>
       <option value="Nature&Wildlife">Nature and Wildlife</option>
       <option value="Museum">Museum</option>
       <option value="Food">Food</option>
@@ -75,14 +78,20 @@ const UpdateActivity =(prop)=>{
       <option value="Tour">Tour</option>
       <option value="Festival">Festival</option>
       <option value="Show">Show</option>
-      <option value="Show">Game</option>
+      <option value="Game">Game</option>
       <option value="Nightlife">Nightlife</option>
       <option value="Archaeology">Archaeology</option>
+      <option value="Airplane">Airplane Ticket</option>
+      <option value="Hotel">Hotel</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Pack">Pack</option>
+      <option value="Toilitres">Tolitres</option>
+      <option value="Documents">Documents</option>
     </select>
     <label htmlFor="description">Description</label>
-    <textarea id="description" cols="30" rows="10" defaultValue ={data.description} onChange={handleChange} value={formState.description}></textarea>
+    <textarea id="description" cols="30" rows="10" value ={formState.description} onChange={handleChange} ></textarea>
     <label htmlFor="image">Image Address Link</label>
-    <textarea id="image" defaultValue={data.image} onChange={handleChange} value={formState.image}></textarea>
+    <textarea id="image" value={formState.image} onChange={handleChange} ></textarea>
     <label htmlFor="destination">Country</label>
     <select id="destination" onChange={handleChange} value={formState.destination}>
     <option defaultValue="select country">Select Country</option>
@@ -91,9 +100,9 @@ const UpdateActivity =(prop)=>{
          
 ))} 
 </select>
-<Link onClick={() => navigate(-2)}>
+
     <button type="submit">Send</button>
-    </Link>
+ </div> 
 </form>
 </div>
     )

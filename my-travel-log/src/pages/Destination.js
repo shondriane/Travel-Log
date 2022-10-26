@@ -28,9 +28,11 @@ const Destination = (props) => {
   }, [destinationId])
 
   const removeActivity=async()=>{
-  
+   
+    if(window.confirm('Are you sure you wish to delete this item?')){
     const remove = await axios.delete(`http://localhost:3001/api/destination/${destinationId}`)
     navigate(-1)
+    }
   
 }
   return destinationsId!==null ?(
@@ -38,6 +40,7 @@ const Destination = (props) => {
     
       <Link onClick ={()=> navigate(-1)}>Go back to destination list</Link>
       <Link onClick = {removeActivity}>Remove Destination</Link>
+      <Link to={`/updateDestination/${destinationId}`}>Update Destination</Link>
       {destination.map((activity) => (
         <Link to ={`/activityDetails/${activity._id}`}>
         <ActivityCard
@@ -46,7 +49,7 @@ const Destination = (props) => {
           image={activity.image}
        
         />
-          {/* <button onClick={removeActivity}> Remove</button> */}
+          <button onClick={removeActivity}> Remove</button>
         </Link>
         
       ))}

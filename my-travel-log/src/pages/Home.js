@@ -49,7 +49,10 @@ const Home = () => {
     const response = await axios.get(
       `http://localhost:3001/api/activitydetails/activity/${searchQuery}`
     )
-    setSearchResults(response.data.activityDetails)
+
+      setSearchResults(response.data.activityDetails)
+    
+    
    toggleSearched(true)
    setSearchQuery(' ')
     }
@@ -74,11 +77,18 @@ const Home = () => {
           
 ))}
 </section></div>
-   )}
+   )
+  }
    </div>   
 
+<div className="allActivities">
+  <Link to="/allActivities">
+  <h2>View All Activities</h2>
+
+  </Link>
+</div>
 <div className="destination">
-<h2>Destination</h2>
+<h1>Destination</h1>
     <section className="container-grid">
  {destination.map((country)=>(
           <Link to ={`/destination/${country._id}`}>

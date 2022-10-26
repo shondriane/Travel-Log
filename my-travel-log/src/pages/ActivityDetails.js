@@ -28,32 +28,36 @@ const ActivityDetails = (props) => {
   
 
 const removeActivity=async()=>{
-  const remove = await axios.delete(`http://localhost:3001/api/activityDetails/${activityId}`)
-  navigate(-2)
-}
+  if(window.confirm('Are you sure you wish to delete this item?')){
+    const remove = await axios.delete(`http://localhost:3001/api/activityDetails/${activityId}`)
+    navigate(-2)
+  }
+  }
+ 
 
 
 
 
   return selectedActivity !== null ? (
     <div className="activity-content">
-      <h1>{selectedActivity}</h1>
+      <h1 className="title">{selectedActivity}</h1>
       <Link onClick={() => navigate(-1)}>Go back to activity list</Link>
+    
       <section className="image-container">
-        <div>
+       
           <img src={activityDetails.image} alt="activity" />
-        </div>
+         
       </section>
       <section className="details">
-        <div className="flex-row space">
-          <h1>Place: {activityDetails.name}</h1>
-          <h2>Activity: {activityDetails.activity}</h2>
+       
+      <h2>Activity: {activityDetails.activity}</h2>
+        
           <p>{activityDetails.description}</p>
-          <button onClick={removeActivity} >Remove</button>
+          <button className="remove"onClick={removeActivity} >Remove</button>
           <Link to={`/updateActivity/${activityId}`}>
-          <button>Edit</button>
+          <button className="edit">Edit</button>
        </Link>
-        </div>
+      
       </section>
     </div>
   ) : null

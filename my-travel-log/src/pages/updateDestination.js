@@ -8,70 +8,54 @@ import '../styles/form.css'
 const UpdateDestination =(prop)=>{
     const navigate = useNavigate()
     let { destinationId } = useParams()
-    const [data,setData]=useState([])
+
     
-    const getCountry = async () => {
+    const getDestinationId = async () => {
         const response = await axios.get(
           `http://localhost:3001/api/destination/${destinationId}`
         )
         console.log(response)
-        setData(response.data.destination)
+        setFormState(response.data.destination)
        
       }
       useEffect(() => {
-        getCountry()
+        getDestinationId()
       }, [destinationId])
 
       const initialState={
-        country: `${data.country}`,
-        image:`${data.image}`,
+        country: "",
+        image:"",
     }
     const [formState, setFormState]= useState(initialState);
-    const [destinations, setDestinations]=useState([]);
-
-    const getDestination = async () => {
-        const response = await axios.get(
-            'http://localhost:3001/api/destination'
-        )
-       console.log(response.data.destination)
-        setDestinations(response.data.destination)
-        
-      }
-      useEffect(() => {
-        getDestination()
-      }, [])
     
       const handleSubmit=(event)=>{
     event.preventDefault();
     axios.put(`http://localhost:3001/api/destination/${destinationId}`,formState)
     setFormState(initialState)
- 
+    navigate('/')
     }
 
     const handleChange=event=>{
         setFormState({...formState,[event.target.id]:event.target.value})
+       
     }
     return (
-<div>
-<h1>Update Destination</h1>
+<div className="formDiv">
+
 <form className="classes.form" onSubmit={handleSubmit}>
+  <div className="form">
+<h1>Update Destination</h1>
 <label htmlFor="destination">Country</label>
-<select id="destination" onChange={handleChange} value={formState.destination}>
-  
-<option defaultValue={data._id}>{data.country}</option>
-    {destinations.map((country)=>(
-          <option value= {country._id}>{country.country}</option>
-         
-))} 
-</select>
+<textarea id="country" onChange={handleChange} value={formState.country}/>
+
     <label htmlFor="image">Image Address Link</label>
-    <textarea id="image" defaultValue={data.image} onChange={handleChange} value={formState.image}></textarea>
-<Link onClick={() => navigate(-2)}>
+    <textarea id="image"  onChange={handleChange} value={formState.image}></textarea>
+
     <button type="submit">Send</button>
-    </Link>
+   </div>
 </form>
 </div>
     )
 }
 
-export default UpdateActivity
+export default UpdateDestination

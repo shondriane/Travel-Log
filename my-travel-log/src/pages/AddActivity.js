@@ -45,9 +45,11 @@ const AddActivity =()=>{
     return(
         <div className="formDiv">
             <form className="classes.form" onSubmit={handleSubmit}>
-<h1>Creating new Activity</h1>
+            <div className="form">
+<h1>Creating New Activity</h1>
+
 <label htmlFor="name">Name:</label>
-    <input type="text" id="name" onChange={handleChange}value={formState.name}/>
+    <textarea className="name"type="text" id="name" onChange={handleChange}value={formState.name}/>
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
     <option defaultValue ="select option">Select Activity</option>
@@ -60,9 +62,15 @@ const AddActivity =()=>{
       <option value="Tour">Tour</option>
       <option value="Festival">Festival</option>
       <option value="Show">Show</option>
-      <option value="Show">Game</option>
+      <option value="Game">Game</option>
       <option value="Nightlife">Nightlife</option>
       <option value="Archaeology">Archaeology</option>
+      <option value="Airplane">Airplane Ticket</option>
+      <option value="Hotel">Hotel</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Pack">Pack</option>
+      <option value="Toilitres">Tolitres</option>
+      <option value="Documents">Documents</option>
     </select>
     <label htmlFor="description">Description</label>
     <textarea id="description" cols="30" rows="10" onChange={handleChange} value={formState.description}></textarea>
@@ -76,10 +84,13 @@ const AddActivity =()=>{
 ))} 
 </select>
     <button type="submit">Send</button>
+    </div>
             </form>
-
-        </div>
+          
+            </div>
+       
     )
+   
 }
 
 export default AddActivity
