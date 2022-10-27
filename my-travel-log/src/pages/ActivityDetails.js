@@ -10,7 +10,7 @@ const ActivityDetails = (props) => {
   const [selectedActivity, setSelectedActivity] = useState(null)
   const [activityDetails, setActivityDetails] = useState(null)
   
- 
+
 
 
   const getActivityDetails = async () => {
@@ -20,12 +20,16 @@ const ActivityDetails = (props) => {
     console.log(response)
     setActivityDetails(response.data.activityDetails)
     setSelectedActivity(response.data.activityDetails.name)
+    
+  
+
+  
   }
   useEffect(() => {
     getActivityDetails()
   }, [activityId])
 
-  
+
 
 const removeActivity=async()=>{
   if(window.confirm('Are you sure you wish to delete this item?')){
@@ -51,8 +55,11 @@ const removeActivity=async()=>{
       <section className="details">
        
       <h2>Activity: {activityDetails.activity}</h2>
-        
-          <p>{activityDetails.description}</p>
+      
+        <h2> Date: {activityDetails.date}</h2>
+      
+      
+          <p> {activityDetails.description}</p>
          
           <ul>
             <li>{activityDetails.todo}</li>

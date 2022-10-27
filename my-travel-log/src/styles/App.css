@@ -129,6 +129,10 @@ button#search{
   text-align: center;
 } */
 
+h2{
+  margin-bottom: 2em;
+}
+
 .activity-content  {
   /* width: 95vw;
   margin: auto;

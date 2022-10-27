@@ -26,12 +26,11 @@ const UpdateActivity =(prop)=>{
 
       const initialState={
         name: "",
+        date:"",
         activity: "",
-        description: "",
+        destination:"",
         image:"",
-        destination: "",
-        image:"",
-        description: "",
+       description: "",
         todo:[]
     
     }
@@ -91,6 +90,8 @@ const UpdateActivity =(prop)=>{
 
 <label htmlFor="name">Name:</label>
 <textarea type = "text" value={formState.name} onChange={handleChange} id="name"/>
+<label>Date:</label>
+    <input type="date"  id="date" onChange={handleChange} value={formState.date}/>
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
         <option value={formState.activity}>{formState.activity}</option>

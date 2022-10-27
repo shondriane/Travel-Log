@@ -9,15 +9,12 @@ const AddActivity =()=>{
 
     const initialState={
         name: "",
+        date:"",
         activity: "",
-        description:"",
-        image:"",
         destination:"",
         image:"",
-        description:"",
+       description: "",
         todo:[]
-       
-    
     }
     
     const [formState, setFormState]= useState(initialState);
@@ -86,6 +83,8 @@ const AddActivity =()=>{
 
 <label htmlFor="name">Name:</label>
     <textarea className="name"type="text" id="name" onChange={handleChange}value={formState.name}/>
+    <label>Date:</label>
+    <input type="date"  id="date" onChange={handleChange} value={formState.date}/>
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
     <option defaultValue ="select option">Select Activity</option>
@@ -116,6 +115,7 @@ const AddActivity =()=>{
     <ul key="list">
     
     </ul>
+  
     <label htmlFor="image">Image Address Link</label>
     <textarea id="image" onChange={handleChange} value={formState.image}></textarea>
     <select id="destination" onChange={handleChange} value={formState.destination}>
