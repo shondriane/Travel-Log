@@ -2,14 +2,16 @@
 const About = () => {
 
     return (
-      <div className="travelDiv" >
-        <img className = "travel" src="https://travellersworldwide.com/wp-content/uploads/elementor/thumbs/shutterstock_623111885-1-scaled-phifxb7av8bl2lrxdes1syk43v9acwtvrveysd1ouo.jpg.webp" alt ="world travel"></img>
+      <div className="travelBody" >
+        <img src ="https://travellersworldwide.com/wp-content/uploads/elementor/thumbs/shutterstock_623111885-1-scaled-phifxb7av8bl2lrxdes1syk43v9acwtvrveysd1ouo.jpg.webp"></img>
+    <div className="travelDiv" >
   <h1>About</h1>
   <p> 
-    One of my greatest loves, is to travel. Why? <br></br>
+   <strong> One of my greatest loves, is to travel. Why? <br></br>
     It allows me to learn more about society and how interconnected we are.
     It gives me the space to grow and shift within myself.<br></br>
     With this comes diversity in thought, pespective, kindness, love, and stepping out of my comfort zone.<br></br>
+    </strong>
     </p>
 <br></br>
 
@@ -26,7 +28,7 @@ const About = () => {
 
   </p>
 
-
+  </div>
   
       </div>
     )
