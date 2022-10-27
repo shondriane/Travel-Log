@@ -3,7 +3,7 @@ const About = () => {
 
     return (
       <div className="travelBody" >
-        <img src ="https://travellersworldwide.com/wp-content/uploads/elementor/thumbs/shutterstock_623111885-1-scaled-phifxb7av8bl2lrxdes1syk43v9acwtvrveysd1ouo.jpg.webp"></img>
+        <img src ="https://travellersworldwide.com/wp-content/uploads/elementor/thumbs/shutterstock_623111885-1-scaled-phifxb7av8bl2lrxdes1syk43v9acwtvrveysd1ouo.jpg.webp" alt="world"></img>
     <div className="travelDiv" >
   <h1>About</h1>
   <p> 
@@ -30,7 +30,9 @@ const About = () => {
   </p>
 
   </div>
-  
+  <a href ="/addDestination" alt="go">
+        <button class= "send">Plan Trip</button>
+    </a>
       </div>
     )
   }

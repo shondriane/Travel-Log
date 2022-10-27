@@ -98,7 +98,7 @@ const AddActivity =()=>{
     <option value="Game">Game</option>
     <option value="Hotel">Hotel</option>
     <option value="Museum">Museum</option>
-    <option value="Nature&Wildlife">Nature and Wildlife</option>
+    <option value="Nature">Nature and Wildlife</option>
     <option value="Pack">Pack</option>
       <option value="Show">Show</option>
       <option value="Tour">Tour</option>

@@ -70,7 +70,7 @@ const removeActivity=async()=>{
           <button className="edit">Edit</button>
        </Link>
        <Link to={`/copyActivity/${activityId}`}>
-          <button className="copy">Copy</button>
+     
        </Link>
       
       </section>

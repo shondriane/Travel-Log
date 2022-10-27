@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import {useParams,Link,useNavigate} from 'react-router-dom'
+import {useParams,useNavigate} from 'react-router-dom'
 import Input from '../components/Input'
 import Tasks from '../components/Tasks'
 
@@ -10,7 +10,7 @@ import '../styles/form.css'
 const UpdateActivity =(prop)=>{
     const navigate = useNavigate()
     let { activityId } = useParams()
-    const [data,setData]=useState([])
+   
     
     const getActivityDetails = async () => {
         const response = await axios.get(
@@ -106,7 +106,7 @@ const UpdateActivity =(prop)=>{
     <option value="Game">Game</option>
     <option value="Hotel">Hotel</option>
     <option value="Museum">Museum</option>
-    <option value="Nature&Wildlife">Nature and Wildlife</option>
+    <option value="Nature">Nature and Wildlife</option>
     <option value="Pack">Pack</option>
       <option value="Show">Show</option>
       <option value="Tour">Tour</option>
