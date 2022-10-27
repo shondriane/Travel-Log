@@ -15,7 +15,7 @@ const AddDestination =()=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.post(`{BASE_URL}/destination`,formState)
+    axios.post(`${BASE_URL}/destination`,formState)
     setFormState(initialState)
     console.log(formState)
     }
