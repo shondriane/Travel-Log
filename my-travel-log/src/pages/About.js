@@ -1,7 +1,9 @@
+
 const About = () => {
 
     return (
-      <div>
+      <div className="travelDiv" >
+        <img className = "travel" src="https://travellersworldwide.com/wp-content/uploads/elementor/thumbs/shutterstock_623111885-1-scaled-phifxb7av8bl2lrxdes1syk43v9acwtvrveysd1ouo.jpg.webp" alt ="world travel"></img>
   <h1>About</h1>
   <p> 
     One of my greatest loves, is to travel. Why? <br></br>
@@ -23,6 +25,8 @@ const About = () => {
     You'll be suprised at what and who you'll find along the way.
 
   </p>
+
+
   
       </div>
     )

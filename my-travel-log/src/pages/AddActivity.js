@@ -88,24 +88,22 @@ const AddActivity =()=>{
 <label htmlFor="activity">Type of Activity:</label>
     <select id="activity" onChange={handleChange} value={formState.activity}>
     <option defaultValue ="select option">Select Activity</option>
-      <option value="Nature">Nature and Wildlife</option>
-      <option value="Museum">Museum</option>
-      <option value="Food">Food</option>
-      <option value="Adventure">Adventure</option>
-      <option value="Boat">Cruise and Sailing</option>
-      <option value="Beach">Beach</option>
-      <option value="Tour">Tour</option>
-      <option value="Festival">Festival</option>
-      <option value="Show">Show</option>
-      <option value="Game">Game</option>
-      <option value="Nightlife">Nightlife</option>
-      <option value="Archaeology">Archaeology</option>
+    <option value="Adventure">Adventure</option>
       <option value="Airplane">Airplane Ticket</option>
-      <option value="Hotel">Hotel</option>
+      <option value="Archaeology">Archaeology</option>
+      <option value="Beach">Beach</option>
+      <option value="Boat">Cruise and Sailing</option>
+      <option value="Food">Food</option>
+    <option value="Festival">Festival</option>
+    <option value="Game">Game</option>
+    <option value="Hotel">Hotel</option>
+    <option value="Museum">Museum</option>
+    <option value="Nature&Wildlife">Nature and Wildlife</option>
+    <option value="Pack">Pack</option>
+      <option value="Show">Show</option>
+      <option value="Tour">Tour</option>
       <option value="Transportation">Transportation</option>
-      <option value="Pack">Pack</option>
-      <option value="Toilitres">Tolitres</option>
-      <option value="Documents">Documents</option>
+      <option value="Nightlife">Nightlife</option>
     </select>
    
     <label htmlFor="description">Description</label>

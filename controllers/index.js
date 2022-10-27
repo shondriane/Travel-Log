@@ -40,6 +40,15 @@ const getAllActivityDetailsByActivity = async (req, res) => {
     }
 }
 
+// const getAllActivityDetailsByDate = async (req, res) => {
+//     try {
+//         const{date}=req.params;
+//         const activityDetails = await ActivityDetails.find({date:date})
+//         return res.status(200).json({ activityDetails })
+//     } catch (error) {
+//         return res.status(500).send(error.message);
+//     }
+// }
 
 
 const getActivityDetails = async(req,res)=>{
