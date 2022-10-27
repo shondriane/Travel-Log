@@ -6,7 +6,7 @@ import Input from '../components/Input'
 import Tasks from '../components/Tasks'
 
 const AddActivity =()=>{
-
+  const BASE_URL = '/api'
     const initialState={
         name: "",
         date:"",
@@ -23,7 +23,7 @@ const AddActivity =()=>{
     
     const getDestination = async () => {
         const response = await axios.get(
-            'http://localhost:3001/api/destination'
+            `${BASE_URL}/destination`
         )
        console.log(response.data.destination)
         setDestinations(response.data.destination)
@@ -35,7 +35,7 @@ const AddActivity =()=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.post('http://localhost:3001/api/activityDetails',formState)
+    axios.post(`${BASE_URL}/activityDetails`,formState)
     setFormState(initialState)
    setTasks([])
     console.log(formState)

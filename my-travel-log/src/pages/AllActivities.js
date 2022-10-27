@@ -9,13 +9,13 @@ import ActivityCard from '../components/ActivityCard'
 
 const AllActivities = (props) => {
   const navigate= useNavigate()
-  
+  const BASE_URL = '/api'
   const [activities, setActivities] = useState(null)
 
   const getActivities
    = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/activityDetails`
+      `${BASE_URL}/api/activityDetails`
     )
    console.log(response)
     setActivities(response.data.activityDetails)

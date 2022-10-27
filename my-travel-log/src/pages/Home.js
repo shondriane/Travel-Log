@@ -13,11 +13,11 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
- 
+ const BASE_URL = '/api'
 
   const getActivityDetails = async () => {
     const response = await axios.get(
-        'http://localhost:3001/api/activityDetails'
+        `${BASE_URL}/activityDetails`
     )
    
     setActivityDetails(response.data.activityDetails)
@@ -31,7 +31,7 @@ const Home = () => {
 
   const getDestination = async () => {
     const response = await axios.get(
-        'http://localhost:3001/api/destination'
+        `${BASE_URL}/destination`
     )
    
     setDestination(response.data.destination)
@@ -50,7 +50,7 @@ const Home = () => {
   const getSearchResults = async (e) => {
     e.preventDefault()
     const response = await axios.get(
-      `http://localhost:3001/api/activitydetails/activity/${searchQuery}`
+      `${BASE_URL}/activitydetails/activity/${searchQuery}`
     )
       setSearchResults(response.data.activityDetails)
       toggleSearched(true)

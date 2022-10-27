@@ -4,6 +4,7 @@ import axios from 'axios'
 import '../styles/form.css'
 
 const AddDestination =()=>{
+    const BASE_URL = '/api'
     const initialState={
         country: "",
         image: "",
@@ -14,7 +15,7 @@ const AddDestination =()=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.post('http://localhost:3001/api/destination',formState)
+    axios.post(`{BASE_URL}/destination`,formState)
     setFormState(initialState)
     console.log(formState)
     }

@@ -8,6 +8,7 @@ import ActivityDetails from './ActivityDetails'
 
 
 const Destination = (props) => {
+  const BASE_URL = '/api'
   const navigate= useNavigate()
   let{destinationId} = useParams()
   const [destinationsId, setDestinationId] = useState(null)
@@ -16,7 +17,7 @@ const Destination = (props) => {
   const getDestinationById
    = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/activityDetails/destination/${destinationId}`
+      `${BASE_URL}/activityDetails/destination/${destinationId}`
     )
    console.log(response)
     setDestination(response.data.activityDetails)
@@ -30,7 +31,7 @@ const Destination = (props) => {
   const removeActivity=async()=>{
    
     if(window.confirm('Are you sure you wish to delete this item?')){
-    const remove = await axios.delete(`http://localhost:3001/api/destination/${destinationId}`)
+    const remove = await axios.delete(`${BASE_URL}/destination/${destinationId}`)
     navigate(-1)
     }
   

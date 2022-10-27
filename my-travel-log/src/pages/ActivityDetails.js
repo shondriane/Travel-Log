@@ -9,13 +9,13 @@ const ActivityDetails = (props) => {
   let { activityId } = useParams()
   const [selectedActivity, setSelectedActivity] = useState(null)
   const [activityDetails, setActivityDetails] = useState(null)
-  
+  const BASE_URL = '/api'
 
 
 
   const getActivityDetails = async () => {
     const response = await axios.get(
-      `http://localhost:3001/api/activityDetails/${activityId}`
+      `${BASE_URL}/activityDetails/${activityId}`
     )
     console.log(response)
     setActivityDetails(response.data.activityDetails)
@@ -33,7 +33,7 @@ const ActivityDetails = (props) => {
 
 const removeActivity=async()=>{
   if(window.confirm('Are you sure you wish to delete this item?')){
-    const remove = await axios.delete(`http://localhost:3001/api/activityDetails/${activityId}`)
+    const remove = await axios.delete(`${BASE_URL}/activityDetails/${activityId}`)
     navigate(-2)
   }
   }
@@ -69,9 +69,7 @@ const removeActivity=async()=>{
           <Link to={`/updateActivity/${activityId}`}>
           <button className="edit">Edit</button>
        </Link>
-       <Link to={`/copyActivity/${activityId}`}>
-     
-       </Link>
+      
       
       </section>
     </div>

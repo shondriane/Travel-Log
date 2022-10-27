@@ -8,8 +8,7 @@ const About = () => {
   <h1>About</h1>
   <p> 
    One of my greatest loves, is to travel. Why? <br></br>
-    It allows me to learn more about society and how interconnected we are.
-    It gives me the space to grow and shift within myself.
+    It allows me to learn more about society and how interconnected we are and it gives me the space to relax, grow and shift within myself.
     With this comes diversity in thought, pespective, kindness, love, and stepping out of my comfort zone.
     
     </p>
@@ -19,7 +18,7 @@ const About = () => {
 <p>
 
     Someone once told me to travel the world while you can.<br></br> 
-    Don't wait because tomorrow is never promised, and circmstances may change. 
+   <strong>Don't wait because tomorrow is never promised, and circmstances may change. </strong> 
    
     This made me think of my grandfather, who moved to his favorite city once he retired.
     Shortly thereafter, he got real sick and never had a chance to enjoy it. 
