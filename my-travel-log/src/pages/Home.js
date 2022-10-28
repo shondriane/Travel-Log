@@ -13,6 +13,7 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [upcoming, past]= useState(false)
   let withHyphens=null
  const BASE_URL = '/api'
 
@@ -49,7 +50,7 @@ const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
- 
+ upcooming(true)
   
 }
 
@@ -69,6 +70,8 @@ upcomingTrip()
     const response = await axios.get(
       `${BASE_URL}/activitydetails/activity/${searchQuery}`
     )
+
+
       setSearchResults(response.data.activityDetails)
       toggleSearched(true)
       
