@@ -8,7 +8,7 @@ import '../styles/form.css'
 const UpdateDestination =(prop)=>{
     const navigate = useNavigate()
     let { destinationId } = useParams()
-
+    const BASE_URL = '/api'
     
     const getDestinationId = async () => {
         const response = await axios.get(
@@ -30,7 +30,7 @@ const UpdateDestination =(prop)=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.put(`http://localhost:3001/api/destination/${destinationId}`,formState)
+    axios.put(`${BASE_URL}/${destinationId}`,formState)
     setFormState(initialState)
     navigate('/home')
     }

@@ -10,7 +10,7 @@ import '../styles/form.css'
 const UpdateActivity =(prop)=>{
     const navigate = useNavigate()
     let { activityId } = useParams()
-   
+    const BASE_URL = '/api'
     
     const getActivityDetails = async () => {
         const response = await axios.get(
@@ -39,7 +39,7 @@ const UpdateActivity =(prop)=>{
 
     const getDestination = async () => {
         const response = await axios.get(
-            'http://localhost:3001/api/destination'
+            `${BASE_URL}/destination`
         )
        console.log(response.data.destination)
         setDestinations(response.data.destination)
@@ -51,7 +51,7 @@ const UpdateActivity =(prop)=>{
     
       const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.put(`http://localhost:3001/api/activityDetails/${activityId}`,formState)
+    axios.put(`${BASE_URL}/activityDetails/${activityId}`,formState)
     setFormState(initialState)
     navigate('/home')
  
