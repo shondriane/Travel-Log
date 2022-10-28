@@ -86,9 +86,16 @@ upcomingTrip()
     <div>
       {upcomingDate && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
+        
       {activityDetails.map((activity)=>{
    
-       <li key={activity._id}>"Don't forget You have an upcoming activity.destination activity.name on activity.date"</li>
+   <Link to ={`/activityDetails/${activityDetails._id}`} key ={activity._id}>
+   <ActivityCard
+   image= {activity.image}
+   name ={actvity.name}
+   date={activity.date}
+  />
+   </Link> 
     }
   )}
       </section>
