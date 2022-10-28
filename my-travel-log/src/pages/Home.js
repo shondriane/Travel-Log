@@ -87,7 +87,9 @@ upcomingTrip()
    
 
   return (
+    
     <div> 
+      <About/>
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
         {searched && (<div><h2>Search Results</h2>
