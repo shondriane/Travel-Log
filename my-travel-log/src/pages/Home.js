@@ -40,6 +40,19 @@ const Home = () => {
     getDestination()
   }, [])
 
+const upcomingTrip =()=>{
+const today = new Date();
+const upcoming = new Date();
+upcoming.setDate(today.getDate()+21);
+const year = upcoming.getUTCFullYear();
+const month = upcoming.getUTCMonth() + 1;
+const day = upcoming.getUTCDate();
+const withHyphens = [year, month, day].join('-');
+if (withHyphens <= `${activityDetails.date}`){
+  alert("Pack your bags, you have a trip")
+}
+}
+upcomingTrip()
   const handleChange = (event) => {
     let word= event.target.value
     let firstUpper = word.substr(0,1).toUpperCase()+ word.substr(1)
