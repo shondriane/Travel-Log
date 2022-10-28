@@ -50,7 +50,10 @@ const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
-upcoming("true")
+if (withHyphens<=`${activity.date}` && `${activity.date}`!==undefined){
+  upcoming("true")
+}
+
 
   
 }
@@ -84,10 +87,10 @@ upcomingTrip()
       {upcomingDate && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
       {activityDetails.map((activity)=>{
-    if (withHyphens<=`${activity.date}` && `${activity.date}`!==undefined){
+   
        <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activity.date}`</li>
     }
-  })}
+  )}
       </section>
 </div>
       )}
