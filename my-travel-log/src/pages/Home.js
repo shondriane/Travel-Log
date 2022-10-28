@@ -50,7 +50,7 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
  if (withHyphens<=`${activityDetails.date}`){
-  upcoming=true
+  upcoming(true)
  }
 }
 upcomingTrip()
