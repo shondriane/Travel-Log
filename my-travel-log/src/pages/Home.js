@@ -85,7 +85,7 @@ upcomingTrip()
       <section className ="container-grid">
       {activityDetails.map((activity)=>{
     if (withHyphens<=`${activity.date}` && `${activity.date}`!==undefined){
-       <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activit.date}`</li>
+       <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activity.date}`</li>
     }
   })}
       </section>
