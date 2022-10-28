@@ -51,7 +51,7 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
 activityDetails.map((activity)=>{
-  if (withHyphens <= `${activity.date}`&& withHyphens !== undefined){
+  if (withHyphens <= `${activity.date}` && withHyphens !== "undefined"){
     
  console.log( `you have an upcoming activity for ${activity.name} on ${activity.date}`)
 }})
