@@ -32,7 +32,7 @@ const UpdateDestination =(prop)=>{
     event.preventDefault();
     axios.put(`http://localhost:3001/api/destination/${destinationId}`,formState)
     setFormState(initialState)
-    navigate('/')
+    navigate('/home')
     }
 
     const handleChange=event=>{

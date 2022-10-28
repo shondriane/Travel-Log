@@ -53,7 +53,7 @@ const UpdateActivity =(prop)=>{
     event.preventDefault();
     axios.put(`http://localhost:3001/api/activityDetails/${activityId}`,formState)
     setFormState(initialState)
-    navigate('/')
+    navigate('/home')
  
     }
 
