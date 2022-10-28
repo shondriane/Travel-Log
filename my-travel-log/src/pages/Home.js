@@ -13,7 +13,7 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [upcoming, past]= useState("false")
+  const [upcomingDate, past]= useState("false")
    let withHyphens=null
  const BASE_URL = '/api'
 
