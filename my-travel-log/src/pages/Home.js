@@ -50,8 +50,13 @@ const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
+const year1 = today.getUTCFullYear();
+const month1 = today.getUTCMonth()+1;
+const day1 = today.getUTCDate();
+const todayDate =[year1,month1,day1].join ('-');
+
  activityDetails.map((activity)=>{
-  if (`${activity.date}`<=withHyphens && `${activity.date}` >=today ){
+  if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
 
   document.getElementById('upcoming').innerHTML=`You have an upcoming ${activity.activity} for ${activity.name} on ${activity.date}`
  
