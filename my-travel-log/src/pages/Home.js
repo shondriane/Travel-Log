@@ -53,7 +53,7 @@ const withHyphens = [year, month, day].join('-');
  activityDetails.map((activity)=>{
   if (`${activity.date}`<=withHyphens && `${activity.date}` !== undefined ){
     
- document.getElementById('upcoming').innerHTML=`you have an upcoming activity for ${activity.name} on ${activity.date}`
+ document.getElementById('upcoming').innerHTML=`You have an upcoming activity for ${activity.name} on ${activity.date}`
  
 
 }
@@ -88,7 +88,12 @@ upcomingTrip()
   return (
     
     <div> 
+   <div className="upcoming">
+  <h1>Upcoming Trips</h1>
+  <p id ="upcoming">
    
+  </p>
+</div>
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
         {searched && (<div><h2>Search Results</h2>
@@ -111,12 +116,7 @@ upcomingTrip()
 
   </Link>
 </div>
-<div>
-  <h1>Upcoming Trips</h1>
-  <p id ="upcoming">
-   
-  </p>
-</div>
+
 <div className="destination">
 <h1>Destination</h1>
     <section className="container-grid">
