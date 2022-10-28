@@ -13,7 +13,7 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [upcoming, past]= useState(false)
+  let withHyphens=null
  const BASE_URL = '/api'
 
   const getActivityDetails = async () => {
@@ -50,15 +50,10 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
  
-  activityDetails.map((activity)=>{
-    if (withHyphens<=`${activityDetails.date}`){
-       <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>
-    }
-  })
   
 }
 
-
+upcomingTrip()
 
 
 
@@ -84,7 +79,11 @@ const withHyphens = [year, month, day].join('-');
     <div>
       {upcoming && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
-        {upcomingTrip}
+      {activityDetails.map((activity)=>{
+    if (withHyphens<=`${activityDetails.date}`){
+       <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>
+    }
+  })}
       </section>
 </div>
       )}
