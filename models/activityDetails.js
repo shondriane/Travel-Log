@@ -9,8 +9,8 @@ const ActivityDetails = new Schema(
         activity:{type:String, required: true},
         destination: {type: Schema.Types.ObjectId, ref:'Destination'},
         image: { type: String, required: true },
-        description: { type: String, required: true },
-        todo: { type: Array, required: true },
+        description: { type: String, required: false },
+        todo: { type: Array, required: false },
        
        
     },
