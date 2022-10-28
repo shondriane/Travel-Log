@@ -12,7 +12,7 @@ const UpdateDestination =(prop)=>{
     
     const getDestinationId = async () => {
         const response = await axios.get(
-          `http://localhost:3001/api/destination/${destinationId}`
+          `${BASE_URL}/destination/${destinationId}`
         )
         console.log(response)
         setFormState(response.data.destination)

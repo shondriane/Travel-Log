@@ -45,15 +45,18 @@ const Home = () => {
 const upcomingTrip =()=>{
 const today = new Date();
 const upcoming = new Date();
-upcoming.setDate(today.getDate()+7);
+upcoming.setDate(today.getDate()+21);
 const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
 activityDetails.map((activity)=>{
-  if (`${activity.date}`>=withHyphens){
+  if (`${activity.date}`<=withHyphens){
     
  console.log( `you have an upcoming activity for ${activity.name} on ${activity.date}`)
+}
+else{
+  return
 }})
 
 
