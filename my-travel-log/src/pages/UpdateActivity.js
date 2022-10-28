@@ -14,7 +14,7 @@ const UpdateActivity =(prop)=>{
     
     const getActivityDetails = async () => {
         const response = await axios.get(
-          `http://localhost:3001/api/activityDetails/${activityId}`
+          `${BASE_URL}/activityDetails/${activityId}`
         )
         console.log(response)
         setFormState(response.data.activityDetails)
