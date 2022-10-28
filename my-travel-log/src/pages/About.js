@@ -17,12 +17,8 @@ const About = () => {
    <h1> Unsolicited Advice </h1> 
 <p>
 
-    Someone once told me to travel the world while you can.<br></br> 
+   Go out and see the world!<br></br> 
    <strong>Don't wait because tomorrow is never promised, and circmstances may change. </strong> 
-   
-    This made me think of my grandfather, who moved to his favorite city once he retired.
-    Shortly thereafter, he got real sick and never had a chance to enjoy it. 
-    So I pass on what was told to me. Go out there and see the world!
     Explore your own neighborhood, your own state, your own country, and different regions in the world. <br></br>
     You'll be suprised at what and who you'll find along the way.
 
