@@ -92,7 +92,7 @@ upcomingTrip()
    <Link to ={`/activityDetails/${activityDetails._id}`} key ={activity._id}>
    <ActivityCard
    image= {activity.image}
-   name ={actvity.name}
+   name ={activity.name}
    date={activity.date}
   />
    </Link> 
