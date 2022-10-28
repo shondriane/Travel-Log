@@ -34,7 +34,12 @@ Upload photos
 
 A trello board used to keep track of development progress can be [viewed here](https://trello.com/b/zoNBYnKl/travel-log).
 
-The project itself was deployed and can be [viewed here](https://shondrianesTravelLog.rokuapp).
+The project itself was deployed and can be [viewed here](https://shondriane-travel.herokuapp.com/).
+
+
+
+### ***Photos***
+
 
 ***
 

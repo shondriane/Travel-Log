@@ -35,7 +35,7 @@ const ActivityDetails = (props) => {
 const removeActivity=async()=>{
   if(window.confirm('Are you sure you wish to delete this item?')){
     const remove = await axios.delete(`${BASE_URL}/activityDetails/${activityId}`)
-    navigate(-2)
+    navigate(-1)
   }
   }
  

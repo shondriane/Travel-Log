@@ -61,11 +61,8 @@ const Home = () => {
         if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
           result.push(activity)
          
-        
-       
-       
-      
       }
+      
       console.log(result)
       setUpdateDate([...result])
       
