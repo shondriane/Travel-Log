@@ -36,7 +36,7 @@ const Destination = (props) => {
     }
   
 }
- if ({activity.date})
+
 
   return destinationsId!==null ?(
     <div className="container-grid">
