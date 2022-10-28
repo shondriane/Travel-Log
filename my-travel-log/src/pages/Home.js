@@ -53,7 +53,7 @@ const withHyphens = [year, month, day].join('-');
  activityDetails.map((activity)=>{
   if (`${activity.date}`<=withHyphens && `${activity.date}` !== undefined ){
     
- document.getElementById('upcoming').innerHTML=`You have an upcoming activity for ${activity.name} on ${activity.date}`
+ document.getElementById('upcoming').innerHTML=`You have an upcoming ${activity.activity} for ${activity.name} on ${activity.date}`
  
 
 }
