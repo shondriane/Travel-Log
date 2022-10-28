@@ -49,12 +49,16 @@ const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
- if (withHyphens<=`${activityDetails.date}`){
+ 
+  activityDetails.map((activity)=>{
+    if (withHyphens<=`${activityDetails.date}`){
+      return ( <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>)
+    }
+  })
   
-  return ( <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>)
 }
 
-}
+
 
 
 
