@@ -50,8 +50,8 @@ const year = upcoming.getUTCFullYear();
 const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
- upcoming(true)
- alert (`you have an upcoming activity for ${activityDetails.name}`)
+ if (withHyphens <=`${activityDetails.date}`)
+ alert (`you have an upcoming activity for ${activityDetails.name} on ${activityDetails.date}`)
   
 }
 
