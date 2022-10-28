@@ -51,9 +51,9 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
 activityDetails.map((activity)=>{
-  if (withHyphens<= `${activity.date}` && `${activity.date}` !==undefined){
+  if (withHyphens <= `${activity.date}` && `${activity.date}` !==undefined){
     
-  return(   `you have an upcoming activity for ${activity.name} on ${activity.date}`)
+  return( `you have an upcoming activity for ${activity.name} on ${activity.date}`)
 }})
 
 
@@ -89,7 +89,7 @@ upcomingTrip()
   return (
     
     <div> 
-      
+      {upcomingTrip}
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
         {searched && (<div><h2>Search Results</h2>
