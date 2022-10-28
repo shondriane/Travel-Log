@@ -45,7 +45,7 @@ const removeActivity=async()=>{
   return selectedActivity !== null ? (
     <div className="activity-content">
       <h1 className="title">{selectedActivity}</h1>
-      <Link onClick={() => navigate(-1)}>Go back to activity list</Link>
+      <Link onClick={() => navigate(-2)}>Go back to activity list</Link>
     
       <section className="image-container">
        
