@@ -13,7 +13,7 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [upcomingDate, setUpcomingDate]= useState([])
+  // const [upcomingDate, setUpcomingDate]= useState([])
  
 
  const BASE_URL = '/api'
@@ -56,24 +56,24 @@ const month1 = today.getUTCMonth()+1;
 const day1 = today.getUTCDate();
 const todayDate =[year1,month1,day1].join ('-');
 
-//  activityDetails.map((activity)=>{
-//   if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
+ activityDetails.map((activity)=>{
+  if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
 
-//   document.getElementById('upcoming').innerHTML=`You have an upcoming ${activity.activity} for ${activity.name} on ${activity.date}`
+  document.getElementById('upcoming').innerHTML=`You have an upcoming ${activity.activity} for ${activity.name} on ${activity.date}`
  
 
-// }
-// })
- activityDetails.forEach((activity)=>{
-  const result=[]
-  if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
-    result.push(activity)
-  }
-  setUpcomingDate(result)
- })
+}
+})
+//  activityDetails.forEach((activity)=>{
+//   const result=[]
+//   if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
+//     result.push(activity)
+//   }
+//   setUpcomingDate(result)
+//  })
 
   
-}
+// }
 
 upcomingTrip()
 
