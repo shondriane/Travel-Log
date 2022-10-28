@@ -13,7 +13,6 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  // const [upcomingDate, setUpcomingDate]= useState([])
  
 
  const BASE_URL = '/api'
@@ -64,16 +63,8 @@ const todayDate =[year1,month1,day1].join ('-');
 
 }
 })
-//  activityDetails.forEach((activity)=>{
-//   const result=[]
-//   if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
-//     result.push(activity)
-//   }
-//   setUpcomingDate(result)
-//  })
-
   
-// }
+}
 
 upcomingTrip()
 
