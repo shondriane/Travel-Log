@@ -81,7 +81,7 @@ upcomingTrip()
 
   return (
     <div>
-      {upcoming && (<div><h1> Upcoming Itinerary </h1>
+      {upcomingDate && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
       {activityDetails.map((activity)=>{
     if (withHyphens<=`${activity.date}` && `${activity.date}`!==undefined){
