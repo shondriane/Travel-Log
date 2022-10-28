@@ -50,10 +50,12 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
  if (withHyphens<=`${activityDetails.date}`){
-  upcoming(true)
- }
+  
+  return ( <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activity.date}`</li>)
 }
-upcomingTrip()
+
+}
+
 
 
   const handleChange = (event) => {
@@ -78,10 +80,7 @@ upcomingTrip()
     <div>
       {upcoming && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
-        {activityDetails.map((activity)=>(
-                <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activity.date}`</li>
-            )
-        )}
+        {upcomingTrip}
       </section>
 </div>
       )}
