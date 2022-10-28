@@ -49,10 +49,11 @@ const month = upcoming.getUTCMonth() + 1;
 const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
 if (withHyphens <= `${activityDetails.date}`){
-  alert("Pack your bags, you have a trip")
+  return (` Don't forgetYou have upcoming ${activityDetails.name} on ${activityDetails.date}`)
 }
 }
-upcomingTrip()
+
+
   const handleChange = (event) => {
     let word= event.target.value
     let firstUpper = word.substr(0,1).toUpperCase()+ word.substr(1)
@@ -73,6 +74,7 @@ upcomingTrip()
 
   return (
     <div>
+      <h1>{upcomingTrip}</h1>
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
         {searched && (<div><h2>Search Results</h2>
