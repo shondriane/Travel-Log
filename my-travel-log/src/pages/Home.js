@@ -79,7 +79,7 @@ upcomingTrip()
       {upcoming && (<div><h1> Upcoming Itinerary </h1>
       <section className ="container-grid">
         {activityDetails.map((activity)=>(
-                <li key="upcoming">`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>
+                <li key={activity._id}>`Don't forget You have an upcoming ${activity.destination} ${activity.name} on ${activity.date}`</li>
             )
         )}
       </section>
