@@ -53,7 +53,7 @@ const withHyphens = [year, month, day].join('-');
 activityDetails.map((activity)=>{
   if (withHyphens<= `${activity.date}` && `${activity.date}` !==undefined){
     upcoming("true")
-  return(  <li> `you have an upcoming activity for ${activity.name} on ${activity.date}`</li>)
+  return(   `you have an upcoming activity for ${activity.name} on ${activity.date}`)
 }})
 
 
@@ -87,27 +87,7 @@ upcomingTrip()
    
 
   return (
-    <div>
-      {upcomingDate && (<div><h1> Upcoming Itinerary </h1>
-      <section className ="container-grid">
-        
-      {activityDetails.map((activity)=>{
-   
-   <Link to ={`/activityDetails/${activityDetails._id}`} key ={activity._id}>
-   <ActivityCard
-   image= {activity.image}
-   name ={activity.name}
-   date={activity.date}
-  />
-   </Link> 
-    }
-  )}
-      </section>
-</div>
-      )}
-    
-       
-      
+    <div> 
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>
         {searched && (<div><h2>Search Results</h2>
