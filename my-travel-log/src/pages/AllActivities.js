@@ -15,7 +15,7 @@ const AllActivities = (props) => {
   const getActivities
    = async () => {
     const response = await axios.get(
-      `${BASE_URL}/api/activityDetails`
+      `${BASE_URL}/activityDetails`
     )
    console.log(response)
     setActivities(response.data.activityDetails)
