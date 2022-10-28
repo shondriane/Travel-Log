@@ -52,7 +52,7 @@ const withHyphens = [year, month, day].join('-');
  
   activityDetails.map((activity)=>{
     if (withHyphens<=`${activityDetails.date}`){
-      return ( <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>)
+       <li key={activityDetails._id}>`Don't forget You have an upcoming ${activityDetails.destination} ${activityDetails.name} on ${activityDetails.date}`</li>
     }
   })
   
