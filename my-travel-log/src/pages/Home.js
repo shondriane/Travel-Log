@@ -13,8 +13,8 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
-  const [upcomingDate, past]= useState("false")
-   let withHyphens=null
+ 
+
  const BASE_URL = '/api'
 
   const getActivityDetails = async () => {
@@ -52,7 +52,7 @@ const day = upcoming.getUTCDate();
 const withHyphens = [year, month, day].join('-');
 activityDetails.map((activity)=>{
   if (withHyphens<= `${activity.date}` && `${activity.date}` !==undefined){
-    upcoming("true")
+    
   return(   `you have an upcoming activity for ${activity.name} on ${activity.date}`)
 }})
 
