@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 import Input from '../components/Input'
 import Tasks from '../components/Tasks'
-
+import { BASE_URL } from '../globals'
 import axios from 'axios'
 import '../styles/form.css'
 
 const UpdateActivity =(prop)=>{
     const navigate = useNavigate()
     let { activityId } = useParams()
-    const BASE_URL = '/api'
+    
     
     const getActivityDetails = async () => {
         const response = await axios.get(

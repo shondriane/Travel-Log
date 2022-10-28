@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import { useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 import ActivityCard from '../components/ActivityCard'
-
+import { BASE_URL } from '../globals'
 
 
 
 
 const AllActivities = (props) => {
   const navigate= useNavigate()
-  const BASE_URL = '/api'
+ 
   const [activities, setActivities] = useState(null)
 
   const getActivities

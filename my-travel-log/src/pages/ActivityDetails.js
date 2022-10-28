@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../globals'
 
 
 
@@ -9,7 +10,7 @@ const ActivityDetails = (props) => {
   let { activityId } = useParams()
   const [selectedActivity, setSelectedActivity] = useState(null)
   const [activityDetails, setActivityDetails] = useState(null)
-  const BASE_URL = '/api'
+ 
 
 
 
@@ -45,7 +46,7 @@ const removeActivity=async()=>{
   return selectedActivity !== null ? (
     <div className="activity-content">
       <h1 className="title">{selectedActivity}</h1>
-      <Link onClick={() => navigate(-2)}>Go back to activity list</Link>
+      <Link onClick={() => navigate(-1)}>Go back to activity list</Link>
     
       <section className="image-container">
        

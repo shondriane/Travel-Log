@@ -2,9 +2,12 @@ import React from 'react'
 import {  useState } from 'react'
 import axios from 'axios'
 import '../styles/form.css'
+import { BASE_URL } from '../globals'
+import { useNavigate } from 'react-router-dom'
 
 const AddDestination =()=>{
-    const BASE_URL = '/api'
+    const navigate =useNavigate()
+  
     const initialState={
         country: "",
         image: "",
@@ -18,6 +21,7 @@ const AddDestination =()=>{
     axios.post(`${BASE_URL}/destination`,formState)
     setFormState(initialState)
     console.log(formState)
+    navigate('/addActivity')
     }
 
     const handleChange=event=>{

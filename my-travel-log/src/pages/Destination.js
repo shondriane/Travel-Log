@@ -3,12 +3,12 @@ import {useParams, useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 import ActivityCard from '../components/ActivityCard'
 import ActivityDetails from './ActivityDetails'
-
+import { BASE_URL } from '../globals'
 
 
 
 const Destination = (props) => {
-  const BASE_URL = '/api'
+ 
   const navigate= useNavigate()
   let{destinationId} = useParams()
   const [destinationsId, setDestinationId] = useState(null)

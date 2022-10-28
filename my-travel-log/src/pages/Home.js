@@ -4,7 +4,7 @@ import Search from '../components/Search'
 import ActivityCard from '../components/ActivityCard'
 import DestinationCard from '../components/DestinationCard'
 import {Link} from 'react-router-dom'
-
+import { BASE_URL } from '../globals'
 
 
 
@@ -13,9 +13,9 @@ const Home = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
- 
+ const [updateDate, setUpdateDate]= useState([])
 
- const BASE_URL = '/api'
+
 
   const getActivityDetails = async () => {
     const response = await axios.get(
@@ -42,31 +42,42 @@ const Home = () => {
     getDestination()
   }, [])
 
-const upcomingTrip =()=>{
-const today = new Date();
-const upcoming = new Date();
-upcoming.setDate(today.getDate()+21);
-const year = upcoming.getUTCFullYear();
-const month = upcoming.getUTCMonth() + 1;
-const day = upcoming.getUTCDate();
-const withHyphens = [year, month, day].join('-');
-const year1 = today.getUTCFullYear();
-const month1 = today.getUTCMonth()+1;
-const day1 = today.getUTCDate();
-const todayDate =[year1,month1,day1].join ('-');
+  useEffect(() => {
+    const upcomingTrip =()=>{
+      const today = new Date();
+      const upcoming = new Date();
+      upcoming.setDate(today.getDate()+1000);
+      const year = upcoming.getUTCFullYear();
+      const month = upcoming.getUTCMonth() + 1;
+      const day = upcoming.getUTCDate();
+      const withHyphens = [year, month, day].join('-');
+      const year1 = today.getUTCFullYear();
+      const month1 = today.getUTCMonth()+1;
+      const day1 = today.getUTCDate();
+      const todayDate =[year1,month1,day1].join ('-');
+      let result =[]
+       activityDetails.forEach((activity)=>{
+    
+        if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
+          result.push(activity)
+         
+        
+       
+       
+      
+      }
+      console.log(result)
+      setUpdateDate([...result])
+      
+      })
+      
+        
+      }
+      
+      upcomingTrip()
+  }, [activityDetails])
 
- activityDetails.map((activity)=>{
-  if (`${activity.date}`<=withHyphens && `${activity.date}` >=todayDate ){
 
-  document.getElementById('upcoming').innerHTML=`You have an upcoming ${activity.activity} for ${activity.name} on ${activity.date}`
- 
-
-}
-})
-  
-}
-
-upcomingTrip()
 
 
 
@@ -94,10 +105,22 @@ upcomingTrip()
     
     <div> 
    <div className="upcoming">
-  <h1>Upcoming Trips</h1>
-  <p id ="upcoming">
-   
-  </p>
+  <h1>Upcoming </h1>
+  <div id ="upcoming" className = "container-grid">
+    {updateDate.map((date)=>(
+      <Link to ={`/activityDetails/${date._id}`}>
+  <div key = {date.date}>  {date.date}</div>
+  <ActivityCard
+  image={date.image}
+  name= {date.name}
+  date ={date.date}
+/>
+  </Link>
+    ))
+
+    }
+
+  </div>
 </div>
       <div className="search">
         <Search handleChange={handleChange}onSubmit={getSearchResults} value={searchQuery}/>

@@ -1,14 +1,14 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
-
+import { BASE_URL } from '../globals'
 import axios from 'axios'
 import '../styles/form.css'
 
 const UpdateDestination =(prop)=>{
     const navigate = useNavigate()
     let { destinationId } = useParams()
-    const BASE_URL = '/api'
+  
     
     const getDestinationId = async () => {
         const response = await axios.get(

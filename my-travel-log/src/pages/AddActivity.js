@@ -4,9 +4,12 @@ import axios from 'axios'
 import '../styles/form.css'
 import Input from '../components/Input'
 import Tasks from '../components/Tasks'
+import { BASE_URL } from '../globals'
+
 
 const AddActivity =()=>{
-  const BASE_URL = '/api'
+ 
+
     const initialState={
         name: "",
         date:"",
@@ -39,7 +42,7 @@ const AddActivity =()=>{
     setFormState(initialState)
    setTasks([])
     console.log(formState)
-    
+   
     }
 
     const handleChange=event=>{

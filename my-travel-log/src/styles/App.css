@@ -155,16 +155,18 @@ display: text-align;
 .travelBody img{
  
   background-size: cover;
-  height: 75vh;
-  width:75vh;
+ height:50vw;
+  width:50vw;
 }
+
+
 .travelBody{
  
   display:grid;
   grid-template-columns: repeat (2,1fr);
   display:flex;
   text-align: center;
-  align-items:center;
+
   justify-content: space-between;
   gap:1.9em;
   margin: 2em auto -6rem;
@@ -175,11 +177,16 @@ display: text-align;
 .travelDiv h1{
   margin-top: 50px;
   margin-bottom: 50px;
-  color:rgb(206, 15, 145)
+  color:rgb(206, 15, 145);
+  font-size: 60px;
+}
+.travelDiv h2{
+   color:rgb(206, 15, 145);
 }
 
 .travelDiv p{
-  color:rgb(194, 186, 191)
+  color:rgb(194, 186, 191);
+  margin-bottom: 2.5em;
 }
 
 .image-container div {
@@ -191,7 +198,11 @@ grid-column-end: 3;
 
 }
 
-
+button#go.send{
+  background-color:green;
+  color: white;
+  margin-bottom: 4em;
+}
 .image-container img {
   margin: auto;
   text-align: center;
