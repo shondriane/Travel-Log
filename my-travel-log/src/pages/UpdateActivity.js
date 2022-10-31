@@ -18,6 +18,7 @@ const UpdateActivity =(prop)=>{
         )
         console.log(response)
         setFormState(response.data.activityDetails)
+        setActivities(response.data.activityDetails.todo)
        
       }
       useEffect(() => {
@@ -36,6 +37,8 @@ const UpdateActivity =(prop)=>{
     }
     const [formState, setFormState]= useState(initialState);
     const [destinations, setDestinations]=useState([]);
+    const [activities,setActivities]=useState([]);
+   
 
     const getDestination = async () => {
         const response = await axios.get(
@@ -56,6 +59,8 @@ const UpdateActivity =(prop)=>{
     navigate('/home')
  
     }
+
+    
 
     const handleChange=event=>{
         setFormState({...formState,[event.target.id]:event.target.value})
@@ -118,10 +123,13 @@ const UpdateActivity =(prop)=>{
     <label htmlFor="description">Description</label>
     <textarea id="description" cols="30" rows="10" value ={formState.description} onChange={handleChange} ></textarea>
     <Input handleChange={handleChangeInput} addTask={addTask} inputValue={inputValue} onChange={handleChange} value={formState.todo}/>
-    <Tasks tasks={tasks} removeTask={removeTask}value={formState.todo}/>
-    <ul>
-     
-    </ul>
+    <Tasks tasks={tasks} value={formState.todo}removeTask={removeTask}/>
+   <ul></ul>
+
+     <ul  >{activities.map((activity)=>(
+      <li key={activity}> {activity} </li>
+     ))}
+   </ul>
     <label htmlFor="image">Image Address Link</label>
     <textarea id="image" value={formState.image} onChange={handleChange} ></textarea>
     <label htmlFor="destination">Country</label>
