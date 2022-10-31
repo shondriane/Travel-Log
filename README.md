@@ -39,8 +39,8 @@ The project itself was deployed and can be [viewed here](https://shondriane-trav
 
 
 ### ***Photos***
-![entity relationship diagram](./Diagram/erd.png)
-![componenet hierachy diagram](./Diagram/chd.png)
+![entity relationship diagram](./Diagrams/erd.png)
+![componenet hierachy diagram](./Diagrams/chd.png)
 ![about me page](./my-travel-log/AppPhotos/about.png)
 ![add destination](./my-travel-log/AppPhotos/destination.png)
 ![add activity](./my-travel-log/AppPhotos/activity.png)
