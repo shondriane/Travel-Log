@@ -39,7 +39,12 @@ The project itself was deployed and can be [viewed here](https://shondriane-trav
 
 
 ### ***Photos***
-
+![entity relationship diagram](diagram/erd.png)
+![componenet hierachy diagram](diagram/chd.png)
+![about me page](./my-travel-log/AppPhotos/about.png)
+![add destination](./my-travel-log/AppPhotos/destination.png)
+![add activity](./my-travel-log/AppPhotos/activity.png)
+![home page](./my-travel-log/AppPhotos/home.png)
 
 ***
 
@@ -56,6 +61,7 @@ Photo of Peru: [https://www.planetware.com/wpimages/2019/12/peru-in-pictures-bes
 Photo of USA: [https://img-aws.ehowcdn.com/700x/www.onlyinyourstate.com/wp-content/uploads/2016/04/USA_Antelope-Canyon.jpg]
 Photo of Portugal:[https://media.istockphoto.com/photos/porto-portugal-skyline-picture-id700954448?k=20&m=700954448&s=612x612&w=0&h=LpK9LeBmjascapuw1b7O24XPMpLcBF737-16_ABHh5E=]
 Photo of Seychelles:[https://www.planetware.com/wpimages/2019/09/seychelles-in-pictures-most-beautiful-places-to-visit-anse-source-dargent-la-digue.jpg]
+convert time: bobbyhadz.com
 
 
 
